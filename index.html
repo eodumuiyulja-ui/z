@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko" data-anim="on">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050a14">
+<title>ORBIS // GATE</title>
+<link rel="stylesheet" href="css/orbis.css">
+</head>
+<body>
+<main id="gate">
+ <div id="wash"></div>
+ <div class="stage">
+  <div class="floor t" style="--d:3s"></div>
+  <svg viewBox="-100 -100 200 200" aria-hidden="true">
+   <defs><radialGradient id="cg"><stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#7ff6ec"/><stop offset="1" stop-color="#3ee6d8" stop-opacity="0"/></radialGradient></defs>
+   <g class="r1" fill="none" stroke="#3ee6d8"><circle class="draw" r="88" pathLength="1" stroke-width="1.4" style="--d:1.5s"/><circle class="t" r="80" stroke-opacity=".45" stroke-dasharray="3 7" style="--d:2s"/></g>
+   <g class="r2" fill="none" stroke="#9fe8ff"><path class="draw" d="M0-66 57-33V33L0 66-57 33V-33Z" pathLength="1" stroke-width="1.2" style="--d:1.9s"/><circle class="t" r="54" stroke-opacity=".4" stroke-dasharray="1 5" style="--d:2.3s"/></g>
+   <circle class="wave" r="40"/><circle class="wave" r="40" style="animation-delay:3.5s"/>
+   <g class="coreg"><circle class="core" r="20" fill="url(#cg)"/></g>
+  </svg>
+ </div>
+ <h1 class="logo t" style="--d:1s">ORBIS</h1>
+ <p class="sub mono t" style="--d:1.2s">INTERDIMENSIONAL ORGANIZATION</p>
+ <p id="coord" class="mono t" style="--d:1.5s">GATE COORD · CH-0001</p>
+ <button id="enter" class="holo t" data-ns style="--d:4s">ENTER ORBIS</button>
+ <button id="snd" class="ghost mono">SOUND: OFF</button>
+</main>
+<section id="term" hidden>
+ <div class="tbox mono">
+  <div id="tlog" aria-live="polite"></div>
+  <div id="pick" hidden>
+   <button class="pc" data-g="f"><img src="images/user_female.webp" alt="여성 여행자"><span>여성 VER<small>TYPE-F</small></span></button>
+   <button class="pc" data-g="m"><img src="images/user_male.webp" alt="남성 여행자"><span>남성 VER<small>TYPE-M</small></span></button>
+  </div>
+  <button id="toHub" class="holo" data-ns hidden>ACCESS CENTRAL HUB</button>
+ </div>
+</section>
+<button id="skip" class="ghost mono">SKIP</button>
+<div id="ghost" class="mono"></div>
+<div id="fade"></div>
+<script src="js/orbis.js"></script>
+<script src="js/gate.js"></script>
+</body>
+</html>
