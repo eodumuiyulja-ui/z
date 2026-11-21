@@ -32,7 +32,7 @@ O.glitch=(el,ms)=>{const g=O.s.glitch;if(!g||!el||!O.s.anim)return;el.classList.
 const sync=()=>P.querySelectorAll('[data-k]').forEach(el=>{const v=O.s[el.dataset.k];if(el.type==='checkbox')el.checked=!!v;else el.value=v});
 $('gear').onclick=()=>{P.hidden=!P.hidden;$('gear').setAttribute('aria-expanded',String(!P.hidden));sync()};
 $('close').onclick=()=>{P.hidden=true;$('gear').setAttribute('aria-expanded','false')};
-$('reset').onclick=()=>{['orbis_gender','orbis_seen','orbis_void'].forEach(k=>O.store.del(k));O.go('index.html')};
+$('reset').onclick=()=>{['orbis_gender','orbis_seen','orbis_void','orbis_tf','orbis_eden','orbis_game'].forEach(k=>O.store.del(k));O.go('index.html')};
 P.addEventListener('input',e=>{const el=e.target,k=el.dataset.k;if(!k)return;O.s[k]=el.type==='checkbox'?+el.checked:+el.value;if(k==='sound'&&O.s.sound)A.init();O.apply();if(k==='sound'||k==='glitch')A.click()});
 addEventListener('keydown',e=>{if(e.key==='Escape')$('close').onclick()});
 addEventListener('resize',()=>{if(parts.length)O.parts()});

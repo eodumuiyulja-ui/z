@@ -40,6 +40,7 @@ async function vanish(c){
  crt.classList.add('fo');await hold(700);crt.hidden=true;crt.classList.remove('fo');busy=false;
 }
 function open(d){
+ if(window.G)G.visit(d.id);
  dv.innerHTML='<div class="dp" style="--c:'+d.col+'"><button class="x" aria-label="닫기">✕</button><div class="bn" style="background-image:url(images/dim_'+d.id+'.jpg)"></div><p class="kicker mono" style="color:'+d.col+'">'+d.c+' · '+d.t+'</p><h2>'+d.n+'</h2><p class="mono sm">'+d.e+' · '+d.st+'</p><h3>세계의 특징</h3><p>'+d.d+'</p><h3>문명과 사회 구조</h3><p>'+d.s+'</p><h3>주요 지역</h3><p>기록 없음 — 오르비스 조사 대기 중.</p><h3>오르비스 관측 상태</h3><p>'+d.o+'</p><h3>고유 용어</h3><div class="chips">'+d.k.map((k,i)=>'<button data-i="'+i+'">'+k[0]+'</button>').join('')+'</div><div class="tip" hidden></div><h3>관련 인물</h3><p>'+d.p.join(', ')+'</p>'+(d.id==='astra'?'<button class="holo" id="req" data-ns>ENTRY REQUEST</button>':'')+'</div>';
  dv.hidden=false;dv._d=d;
 }
@@ -60,4 +61,5 @@ async function denied(btn){
 }
 al.addEventListener('click',e=>{if(busy)return;if(e.target===al||e.target.closest('#ac'))al.hidden=true});
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!busy){al.hidden=true;dv.hidden=true}});
+const hh=location.hash.slice(1),hd=D.find(x=>x.id===hh);if(hd&&hh!=='void')open(hd);
 })();
